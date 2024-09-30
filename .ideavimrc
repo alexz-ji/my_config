@@ -80,6 +80,10 @@ map \e <Action>(QuickImplementations)
 "" Map \p to show Parameter Info
 map \p <Action>(ParameterInfo)
 
+"" Map zC / zO for close / open folded code blocks.
+nnoremap zC :action CollapseRegionRecursively<CR>
+nnoremap zO :action ExpandRegionRecursively<CR>
+
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
