@@ -64,21 +64,22 @@ let mapleader=" "
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map \r to the Reformat Code action
 map \r <Action>(ReformatCode)
-
 "" Map \d to go to function declaration.
 map \d <Action>(GotoDeclaration)
-
 "" Map \b to toggle the breakpoint on the current line
 map \b <Action>(ToggleLineBreakpoint)
-
 "" Map \q to show Quick Documentation and Error Description
 map \q <Action>(ShowHoverInfo)
-
 "" Map \e to show Quick Definition
 map \e <Action>(QuickImplementations)
-
 "" Map \p to show Parameter Info
 map \p <Action>(ParameterInfo)
+"" Map \w to close file tab
+map \w <Action>(CloseContent)
+
+"" Map <l><l>n to stop showing highlights.
+nnoremap <leader><leader>n :noh<CR>
+
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
