@@ -27,7 +27,7 @@ set visualbell                          " when on, prevent beeping on error
 set virtualedit=onemore                 " place cursor where there is no actual text,
                                         " 'onemore' allows the cursor to move just past the end of the line
 set matchpairs+=<:>                     " % also match '<'s and '>'s
-set scrolloff=0                         " Set this to 0 now to avoid Jupyter cells to jump around when typing. #Show a few lines of context around the cursor. Note that this makes
+set scrolloff=10                        " Show a few lines of context around the cursor. Note that this makes
                                         " the text scroll if you mouse-click near the start or end of the window.
 noh                                     " reset highlight when restarts.
 
@@ -77,9 +77,12 @@ map \p <Action>(ParameterInfo)
 "" Map \w to close file tab
 map \w <Action>(CloseContent)
 
-"" Map <l><l>n to stop showing highlights.
+"" Map <leader><leader>n to stop showing highlights.
 nnoremap <leader><leader>n :noh<CR>
-
+"" Map <leader><leader>s to set scrolloff=0 to solve Jupyter notebook screen jumping issue.
+nnoremap <leader><leader>s :set scrolloff=0<CR>
+"" Map <leader><leader>S to set scrolloff=10 - back to default setting initiated.
+nnoremap <leader><leader>S :set scrolloff=10<CR>
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
