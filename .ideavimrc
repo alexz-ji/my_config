@@ -96,6 +96,8 @@ nnoremap <leader>z :NERDTreeFocus<CR>
 "" Split window
 nmap <leader>v :vsplit<CR>
 nmap <leader>h :split<CR>
+nmap <leader>H <Action>(Unsplit)
+nmap <leader>V <Action>(Unsplit)
 
 "" Map editor shortcuts
 map [[ <Action>(MethodUp)
