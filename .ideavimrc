@@ -96,8 +96,8 @@ nnoremap <leader>z :NERDTreeFocus<CR>
 "" Split window
 nmap <leader>V <Action>(SplitVertically)
 nmap <leader>H <Action>(SplitHorizontally)
-nmap <leader>v <Action>(MoveTabDown)
-nmap <leader>h <Action>(MoveTabRight)
+nmap <leader>v <Action>(MoveTabRight)
+nmap <leader>h <Action>(MoveTabDown)
 nmap <leader>o <Action>(MoveEditorToOppositeTabGroup)
 nmap <leader>O <Action>(Unsplit)
 nmap <leader>w <Action>(CloseAllEditorsButActive)
