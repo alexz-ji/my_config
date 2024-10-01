@@ -63,7 +63,7 @@ let mapleader=" "
  
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map Reformat Code action
-map \r <Action>(ReformatCode)
+map \r <Action>(ReformatCode) :write<CR>
 "" Map go to function declaration.
 map \d <Action>(GotoDeclaration)
 "" Map toggle the breakpoint on the current line
@@ -76,6 +76,14 @@ map \e <Action>(QuickImplementations)
 map \p <Action>(ParameterInfo)
 "" Map close file tab
 map \w <Action>(CloseContent)
+"" Map show terminal window
+map \t <Action>(ActivateTerminalToolWindow)
+"" Map toggle distraction free mode
+map \z <Action>(ToggleDistractionFreeMode)
+"" Map file structure pop up - show attributes of current file
+map \f <Action>(FileStructurePopup)
+"" Map hide all side windows
+map \h <Action>(HideAllWindows)
 
 "" Map stop showing highlights.
 nnoremap <leader>n :noh<CR>
@@ -83,6 +91,36 @@ nnoremap <leader>n :noh<CR>
 nnoremap <leader>s :set scrolloff=0<CR>
 "" Map set scrolloff=9 to go back to default setting initiated.
 nnoremap <leader>S :set scrolloff=9<CR>
+"" Map NERDTree
+nnoremap <leader>z :NERDTreeFocus<CR>
+"" Split window
+nmap <leader>v :vsplit<CR>
+nmap <leader>h :split<CR>
+
+"" Map editor shortcuts
+map [[ <Action>(MethodUp)
+map ]] <Action>(MethodDown)
+map gc <Action>(GotoClass)
+map gd <Action>(GotoDeclaration)
+map gi <Action>(GotoImplementation)
+map gs <Action>(GotoSuperMethod)
+map gf <Action>(Forward)                            " IDEA action - go back to last position, same as Ctrl-i
+map gb <Action>(Back)                               " IDEA action - go back to next position, same as Ctrl-o
+map <C-Right> <Action>(NextTab)
+map <C-Left> <Action>(PreviousTab)
+nnoremap <C-Up> #                                   " Map Ctrl-Up to VIM key # - jump to previous whole word.
+nnoremap <C-Down> *                                 " Map Ctrl-Down to VIM key * - jump to next whole word.
+nnoremap Y y$                                       " Yank til end of line. Default is to yank whole line as yy.
+
+" Quick window navigation in split window
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+map <C-H> <C-W>h
+
+" Put search results in the middle of the screen
+nnoremap n nzz
+nnoremap N Nzz
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
@@ -103,12 +141,6 @@ nmap <leader><C-n> <Plug>AllWholeOccurrences
 xmap <leader><C-n> <Plug>AllWholeOccurrences
 nmap <leader>g<C-n> <Plug>AllOccurrences
 xmap <leader>g<C-n> <Plug>AllOccurrences
-
-
-" Remap NERDTree
-nnoremap <leader>z :NERDTreeFocus<CR>
-nnoremap <leader>x :NERDTreeFind<CR>
-
 
 
 " ----------------------------------------Set IDEA handler below ---------------------------------------------------
