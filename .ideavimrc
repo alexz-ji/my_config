@@ -105,17 +105,17 @@ map gd <Action>(GotoDeclaration)
 map gi <Action>(GotoImplementation)
 map gs <Action>(GotoSuperMethod)
 " IDEA action - go to next position, same as Ctrl-i
-map gf <Action>(Forward) 
+map gf <Action>(Forward)
 " IDEA action - go to previous position, same as Ctrl-o
-map gb <Action>(Back)                               
+map gb <Action>(Back)
 map <C-Right> <Action>(NextTab)
 map <C-Left> <Action>(PreviousTab)
 " Map Ctrl-Up to VIM key # - jump to previous whole word.
-nnoremap <C-Up> #    
+nnoremap <C-Up> #
 " Map Ctrl-Down to VIM key * - jump to next whole word.
-nnoremap <C-Down> *    
+nnoremap <C-Down> *
 " Yank til end of line. Default is to yank whole line as yy.
-nnoremap Y y$                                       
+nnoremap Y y$
 
 " Quick window navigation in split window
 map <C-J> <C-W>j
