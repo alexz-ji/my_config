@@ -94,11 +94,12 @@ nnoremap <leader>S :set scrolloff=9<CR>
 "" Map NERDTree
 nnoremap <leader>z :NERDTreeFocus<CR>
 "" Split window
-nmap <leader>v :vsplit<CR>
-nmap <leader>h :split<CR>
-nmap <leader>H <Action>(Unsplit)
-nmap <leader>V <Action>(Unsplit)
+nmap <leader>V <Action>(SplitVertically)
+nmap <leader>H <Action>(SplitHorizontally)
+nmap <leader>v <Action>(MoveTabDown)
+nmap <leader>h <Action>(MoveTabRight)
 nmap <leader>o <Action>(MoveEditorToOppositeTabGroup)
+nmap <leader>O <Action>(Unsplit)
 nmap <leader>w <Action>(CloseAllEditorsButActive)
 nmap <leader>W <Action>(CloseAllEditors)
 
