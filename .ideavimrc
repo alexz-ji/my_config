@@ -98,6 +98,10 @@ nmap <leader>v :vsplit<CR>
 nmap <leader>h :split<CR>
 nmap <leader>H <Action>(Unsplit)
 nmap <leader>V <Action>(Unsplit)
+nmap <leader>o <Action>(MoveEditorToOppositeTabGroup)
+nmap <leader>w <Action>(CloseAllEditorsButActive)
+nmap <leader>W <Action>(CloseAllEditors)
+
 
 "" Map editor shortcuts
 map [[ <Action>(MethodUp)
