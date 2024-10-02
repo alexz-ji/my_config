@@ -3,10 +3,7 @@
 " Find more examples here: https://jb.gg/share-ideavimrc
  
 
- 
-
 " ------------------------------------- Set options below ------------------------------------------------------
-
  
 set easymotion                          " use plugin installed from IDEA
 set quickscope                          " use plugin installed from IDEA
@@ -36,7 +33,6 @@ set clipboard^=unnamed,unnamedplus
 
 
 " ----------------------------------------- Plugins below --------------------------------------------------------
- 
 
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
  
@@ -55,43 +51,52 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " ------------------------------------------ Key maps below -------------------------------------------------------
 
-
 " Map <leader> key
 let mapleader=" "
 
 
 " +++++++++++++++++++ Map \{char} keys +++++++++++++++++++++
  
-"" Map Reformat Code action
+" Map Reformat Code and save
 map \r <Action>(ReformatCode) :write<CR>
-"" Map toggle the breakpoint on the current line
+
+" Map toggle the breakpoint on the current line
 map \b <Action>(ToggleLineBreakpoint)
-"" Map show Quick Documentation and Error Description
+
+" Map show Quick Documentation and Error Description
 map \q <Action>(ShowHoverInfo)
-"" Map show Quick Definition
+
+" Map show Quick Definition
 map \e <Action>(QuickImplementations)
-"" Map show Parameter Info
+
+" Map show Parameter Info
 map \p <Action>(ParameterInfo)
-"" Map close file tab
+
+" Map close file tab
 map \x <Action>(CloseContent)
-"" Map show terminal window
+
+" Map show terminal window
 map \t <Action>(ActivateTerminalToolWindow)
-"" Map toggle distraction free mode
+
+" Map toggle distraction free mode
 map \z <Action>(ToggleDistractionFreeMode)
-"" Map file structure pop up - show attributes of current file
+
+" Map file structure pop up - show attributes of current file
 map \f <Action>(FileStructurePopup)
-"" Map hide all side windows
+
+" Map hide all side windows
 map \h <Action>(HideAllWindows)
-"" Map stop showing highlights.
+
+" Map stop showing highlights.
 nnoremap \n :noh<CR>
 
 
 " +++++++++++++++++++ Map <leader>{char} keys ++++++++++++++++++++
 
-"" Map NERDTree
+" Map NERDTree
 nnoremap <leader>z :NERDTreeFocus<CR>
 
-"" Split window
+" Split window
 nmap <leader>| <Action>(SplitVertically)
 nmap <leader>_ <Action>(SplitHorizontally)
 nmap <leader>\ <Action>(MoveTabRight)
@@ -101,24 +106,24 @@ nmap <leader>O <Action>(Unsplit)
 nmap <leader>x <Action>(CloseAllEditorsButActive)
 nmap <leader>X <Action>(CloseAllEditors)
 
-"" Easymotion mappings
-  "" <leader>f{char}    |  <Plug>(easymotion-f)
-  "" <leader>F{char}    |  <Plug>(easymotion-F)
-  "" <leader>t{char}    |  <Plug>(easymotion-t)
-  "" <leader>T{char}    |  <Plug>(easymotion-T)
-  "" <leader>w          |  <Plug>(easymotion-w)
-  "" <leader>W          |  <Plug>(easymotion-W)
-  "" <leader>b          |  <Plug>(easymotion-b)
-  "" <leader>B          |  <Plug>(easymotion-B)
-  "" <leader>e          |  <Plug>(easymotion-e)
-  "" <leader>E          |  <Plug>(easymotion-E)
-  "" <leader>ge         |  <Plug>(easymotion-ge
-  "" <leader>gE         |  <Plug>(easymotion-gE
-  "" <leader>j          |  <Plug>(easymotion-j)
-  "" <leader>k          |  <Plug>(easymotion-k)
-  "" <leader>n          |  <Plug>(easymotion-n)
-  "" <leader>N          |  <Plug>(easymotion-N)
-  "" <leader>s          |  <Plug>(easymotion-s)
+" Easymotion mappings
+  " <leader>f{char}    |  <Plug>(easymotion-f)
+  " <leader>F{char}    |  <Plug>(easymotion-F)
+  " <leader>t{char}    |  <Plug>(easymotion-t)
+  " <leader>T{char}    |  <Plug>(easymotion-T)
+  " <leader>w          |  <Plug>(easymotion-w)
+  " <leader>W          |  <Plug>(easymotion-W)
+  " <leader>b          |  <Plug>(easymotion-b)
+  " <leader>B          |  <Plug>(easymotion-B)
+  " <leader>e          |  <Plug>(easymotion-e)
+  " <leader>E          |  <Plug>(easymotion-E)
+  " <leader>ge         |  <Plug>(easymotion-ge
+  " <leader>gE         |  <Plug>(easymotion-gE
+  " <leader>j          |  <Plug>(easymotion-j)
+  " <leader>k          |  <Plug>(easymotion-k)
+  " <leader>n          |  <Plug>(easymotion-n)
+  " <leader>N          |  <Plug>(easymotion-N)
+  " <leader>s          |  <Plug>(easymotion-s)
 map <Leader> <Plug>(easymotion-prefix)
 
 " Multiple-cursors shortcuts. Note that the default <A-n> and g<A-n> shortcuts don't work on Mac due to dead keys.
@@ -132,10 +137,8 @@ xmap <leader>g<C-n> <Plug>AllOccurrences
 
 " +++++++++++++++++++ Map <leader><leader>{char} keys +++++++++++++++++++++
 
-"" Map set scrolloff=0 to solve Jupyter notebook screen jumping issue.
+" Map set scrolloff=0 / reset to 6 to solve Jupyter notebook screen jumping issue.
 nnoremap <leader><leader>s :set scrolloff=0<CR>
-
-"" Map set scrolloff=9 to go back to default setting initiated.
 nnoremap <leader><leader>S :set scrolloff=6<CR>
 
 
@@ -151,9 +154,8 @@ map gc <Action>(GotoClass)
 map gi <Action>(GotoImplementation)
 map gs <Action>(GotoSuperMethod)
 
-" IDEA action - go to next position, same as VIM Ctrl-i
+" IDEA action - go to next/previous position, same as VIM <Ctrl>-i / <Ctrl>-o
 map gf <Action>(Forward)
-" IDEA action - go to previous position, same as VIM Ctrl-o
 map gb <Action>(Back)
 
 " Yank til end of line. Default is to yank whole line as yy.
@@ -168,14 +170,12 @@ map Q gq
 
 " ++++++++++++++++++++ Map <Ctrl>{char} keys ++++++++++++++++++++++
 
-" Remap IDEA <Alt>Right to <Ctrl>Right
+" Remap IDEA <Alt>Right/Left to <Ctrl>Right/Left
 map <C-Right> <Action>(NextTab)
-" Remap IDEA <Alt>Left to <Ctrl>Left
 map <C-Left> <Action>(PreviousTab)
 
-" Map Ctrl-Up to VIM key # - jump to previous whole word.
+" Map <Ctrl>-Up/Down to VIM key #/* to jump to previous/next whole word.
 nnoremap <C-Up> #
-" Map Ctrl-Down to VIM key * - jump to next whole word.
 nnoremap <C-Down> *
 
 " Quick window navigation in split window
@@ -195,7 +195,6 @@ xmap <C-p> <Plug>RemoveOccurrence
 
 
 " ----------------------------------------Set IDEA handler below ---------------------------------------------------
-
 
 " n - normal mode
 " i - insert mode
