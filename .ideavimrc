@@ -20,12 +20,13 @@ set list                                " show whitespace
 set breakindent                         " indent soft wrapped lines to match the first line's indent
 set viminfo=100                         " remember viminfo when restarts
 set visualbell                          " when on, prevent beeping on error
-set virtualedit=onemore                 " place cursor where there is no actual text,
-                                        " 'onemore' allows the cursor to move just past the end of the line
 set matchpairs+=<:>                     " % also match '<'s and '>'s
-set scrolloff=6                         " Show a few lines of context around the cursor. Note that this makes
-                                        " the text scroll if you mouse-click near the start or end of the window.
+set scrolloff=6                         " Show a few lines of context around the cursor.
 noh                                     " reset highlight when restarts.
+              
+" place cursor where there is no actual text,
+" 'onemore' allows the cursor to move just past the end of the line
+" set virtualedit=onemore 
 
 " IDEA VIM Specific
 set clipboard^=unnamed,unnamedplus
