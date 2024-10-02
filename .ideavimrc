@@ -26,7 +26,7 @@ noh                                     " reset highlight when restarts.
               
 " place cursor where there is no actual text,
 " 'onemore' allows the cursor to move just past the end of the line
-" set virtualedit=onemore 
+set virtualedit=onemore 
 
 " IDEA VIM Specific
 set clipboard^=unnamed,unnamedplus
