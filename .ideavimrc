@@ -40,7 +40,7 @@ Plug 'machakann/vim-highlightedyank'                       " Highlight copied te
 Plug 'tpope/vim-commentary'                                " Commentary plugin
 Plug 'preservim/nerdtree'                                  " Use NERDTree shortcut to control file navigator
 Plug 'tpope/vim-surround'                                  " Surrounding word e.g., ysiw' to surround word with '.
-                                                           " Also V select and press S to surround character outside.
+                                                           " In Visual mode press S{char} to surround {char} outside.
 Plug 'terryma/vim-multiple-cursors'                        " CTRL + N for multiple cursor
 
 
