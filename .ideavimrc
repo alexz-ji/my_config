@@ -14,7 +14,7 @@ set hlsearch                            " highlight search
 set incsearch                           " incremental search
 set number                              " add line numbers
 set relativenumber                      " add relative line numbers
-set colorcolumn=120                     " set an 120 column border for good coding style
+set colorcolumn=80                     " set an 80 column border for good coding style
 syntax on                               " syntax highlighting
 set list                                " show whitespace
 set breakindent                         " indent soft wrapped lines to match the first line's indent
