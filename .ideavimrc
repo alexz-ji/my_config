@@ -8,7 +8,6 @@
 " ------------------------------------- Set options below ------------------------------------------------------
 
  
-
 set easymotion                          " use plugin installed from IDEA
 set quickscope                          " use plugin installed from IDEA
 
@@ -27,7 +26,7 @@ set visualbell                          " when on, prevent beeping on error
 set virtualedit=onemore                 " place cursor where there is no actual text,
                                         " 'onemore' allows the cursor to move just past the end of the line
 set matchpairs+=<:>                     " % also match '<'s and '>'s
-set scrolloff=9                         " Show a few lines of context around the cursor. Note that this makes
+set scrolloff=6                         " Show a few lines of context around the cursor. Note that this makes
                                         " the text scroll if you mouse-click near the start or end of the window.
 noh                                     " reset highlight when restarts.
 
@@ -60,12 +59,11 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " Map <leader> key
 let mapleader=" "
 
+
+" +++++++++++++++++++ Map \{char} keys +++++++++++++++++++++
  
-"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
 "" Map Reformat Code action
 map \r <Action>(ReformatCode) :write<CR>
-"" Map go to function declaration.
-map \d <Action>(GotoDeclaration)
 "" Map toggle the breakpoint on the current line
 map \b <Action>(ToggleLineBreakpoint)
 "" Map show Quick Documentation and Error Description
@@ -75,7 +73,7 @@ map \e <Action>(QuickImplementations)
 "" Map show Parameter Info
 map \p <Action>(ParameterInfo)
 "" Map close file tab
-map \w <Action>(CloseContent)
+map \x <Action>(CloseContent)
 "" Map show terminal window
 map \t <Action>(ActivateTerminalToolWindow)
 "" Map toggle distraction free mode
@@ -84,51 +82,82 @@ map \z <Action>(ToggleDistractionFreeMode)
 map \f <Action>(FileStructurePopup)
 "" Map hide all side windows
 map \h <Action>(HideAllWindows)
-
 "" Map stop showing highlights.
-nnoremap <leader>n :noh<CR>
-"" Map set scrolloff=0 to solve Jupyter notebook screen jumping issue.
-nnoremap <leader>s :set scrolloff=0<CR>
-"" Map set scrolloff=9 to go back to default setting initiated.
-nnoremap <leader>S :set scrolloff=9<CR>
+nnoremap \n :noh<CR>
+
+
+" +++++++++++++++++++ Map <leader>{char} keys ++++++++++++++++++++
+
 "" Map NERDTree
 nnoremap <leader>z :NERDTreeFocus<CR>
+
 "" Split window
-nmap <leader>V <Action>(SplitVertically)
-nmap <leader>H <Action>(SplitHorizontally)
-nmap <leader>v <Action>(MoveTabRight)
-nmap <leader>h <Action>(MoveTabDown)
+nmap <leader>| <Action>(SplitVertically)
+nmap <leader>_ <Action>(SplitHorizontally)
+nmap <leader>\ <Action>(MoveTabRight)
+nmap <leader>- <Action>(MoveTabDown)
 nmap <leader>o <Action>(MoveEditorToOppositeTabGroup)
 nmap <leader>O <Action>(Unsplit)
-nmap <leader>w <Action>(CloseAllEditorsButActive)
-nmap <leader>W <Action>(CloseAllEditors)
+nmap <leader>x <Action>(CloseAllEditorsButActive)
+nmap <leader>X <Action>(CloseAllEditors)
+
+"" Easymotion mappings
+  "" <leader>f{char}    |  <Plug>(easymotion-f)
+  "" <leader>F{char}    |  <Plug>(easymotion-F)
+  "" <leader>t{char}    |  <Plug>(easymotion-t)
+  "" <leader>T{char}    |  <Plug>(easymotion-T)
+  "" <leader>w          |  <Plug>(easymotion-w)
+  "" <leader>W          |  <Plug>(easymotion-W)
+  "" <leader>b          |  <Plug>(easymotion-b)
+  "" <leader>B          |  <Plug>(easymotion-B)
+  "" <leader>e          |  <Plug>(easymotion-e)
+  "" <leader>E          |  <Plug>(easymotion-E)
+  "" <leader>ge         |  <Plug>(easymotion-ge
+  "" <leader>gE         |  <Plug>(easymotion-gE
+  "" <leader>j          |  <Plug>(easymotion-j)
+  "" <leader>k          |  <Plug>(easymotion-k)
+  "" <leader>n          |  <Plug>(easymotion-n)
+  "" <leader>N          |  <Plug>(easymotion-N)
+  "" <leader>s          |  <Plug>(easymotion-s)
+map <Leader> <Plug>(easymotion-prefix)
+
+" Multiple-cursors shortcuts. Note that the default <A-n> and g<A-n> shortcuts don't work on Mac due to dead keys.
+" <A-n> is used to enter accented text e.g. ñ
+" Feel free to pick your own mappings that are not affected. I like to use <leader>
+nmap <leader><C-n> <Plug>AllWholeOccurrences
+xmap <leader><C-n> <Plug>AllWholeOccurrences
+nmap <leader>g<C-n> <Plug>AllOccurrences
+xmap <leader>g<C-n> <Plug>AllOccurrences
 
 
-"" Map editor shortcuts
+" +++++++++++++++++++ Map <leader><leader>{char} keys +++++++++++++++++++++
+
+"" Map set scrolloff=0 to solve Jupyter notebook screen jumping issue.
+nnoremap <leader><leader>s :set scrolloff=0<CR>
+
+"" Map set scrolloff=9 to go back to default setting initiated.
+nnoremap <leader><leader>S :set scrolloff=6<CR>
+
+
+" ++++++++++++++++++++ Map {char} combo keys +++++++++++++++++++
+
+" Navigate jump to functions
 map [[ <Action>(MethodUp)
 map ]] <Action>(MethodDown)
-map gc <Action>(GotoClass)
+
+" Go to jump - similar to IDEA left click on functions.
 map gd <Action>(GotoDeclaration)
+map gc <Action>(GotoClass)
 map gi <Action>(GotoImplementation)
 map gs <Action>(GotoSuperMethod)
-" IDEA action - go to next position, same as Ctrl-i
+
+" IDEA action - go to next position, same as VIM Ctrl-i
 map gf <Action>(Forward)
-" IDEA action - go to previous position, same as Ctrl-o
+" IDEA action - go to previous position, same as VIM Ctrl-o
 map gb <Action>(Back)
-map <C-Right> <Action>(NextTab)
-map <C-Left> <Action>(PreviousTab)
-" Map Ctrl-Up to VIM key # - jump to previous whole word.
-nnoremap <C-Up> #
-" Map Ctrl-Down to VIM key * - jump to next whole word.
-nnoremap <C-Down> *
+
 " Yank til end of line. Default is to yank whole line as yy.
 nnoremap Y y$
-
-" Quick window navigation in split window
-map <C-J> <C-W>j
-map <C-K> <C-W>k
-map <C-L> <C-W>l
-map <C-H> <C-W>h
 
 " Put search results in the middle of the screen
 nnoremap n nzz
@@ -136,6 +165,24 @@ nnoremap N Nzz
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
+
+" ++++++++++++++++++++ Map <Ctrl>{char} keys ++++++++++++++++++++++
+
+" Remap IDEA <Alt>Right to <Ctrl>Right
+map <C-Right> <Action>(NextTab)
+" Remap IDEA <Alt>Left to <Ctrl>Left
+map <C-Left> <Action>(PreviousTab)
+
+" Map Ctrl-Up to VIM key # - jump to previous whole word.
+nnoremap <C-Up> #
+" Map Ctrl-Down to VIM key * - jump to next whole word.
+nnoremap <C-Down> *
+
+" Quick window navigation in split window
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+map <C-H> <C-W>h
 
 " Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
 nmap <C-n> <Plug>NextWholeOccurrence
@@ -145,14 +192,6 @@ xmap g<C-n> <Plug>NextOccurrence
 xmap <C-x> <Plug>SkipOccurrence
 xmap <C-p> <Plug>RemoveOccurrence
 
-
-" Note that the default <A-n> and g<A-n> shortcuts don't work on Mac due to dead keys.
-" <A-n> is used to enter accented text e.g. ñ
-" Feel free to pick your own mappings that are not affected. I like to use <leader>
-nmap <leader><C-n> <Plug>AllWholeOccurrences
-xmap <leader><C-n> <Plug>AllWholeOccurrences
-nmap <leader>g<C-n> <Plug>AllOccurrences
-xmap <leader>g<C-n> <Plug>AllOccurrences
 
 
 " ----------------------------------------Set IDEA handler below ---------------------------------------------------
