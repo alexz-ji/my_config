@@ -68,7 +68,10 @@ map \b <Action>(ToggleLineBreakpoint)
 map \q <Action>(ShowHoverInfo)
 
 " Map show Quick Definition
-map \e <Action>(QuickImplementations)
+map \i <Action>(QuickImplementations)
+
+" Map Execute In Console - same as Alt-Shift-E
+map \e <Action>(ExecuteInPyConsoleAction)
 
 " Map show Parameter Info
 map \p <Action>(ParameterInfo)
