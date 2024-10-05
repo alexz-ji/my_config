@@ -5,7 +5,6 @@
 
 " ------------------------------------- Set options below ------------------------------------------------------
  
-set easymotion                          " use plugin installed from IDEA
 set quickscope                          " use plugin installed from IDEA
 
 set ignorecase                          " case insensitive
@@ -41,9 +40,9 @@ Plug 'machakann/vim-highlightedyank'                       " Highlight copied te
 Plug 'tpope/vim-commentary'                                " Commentary plugin
 Plug 'preservim/nerdtree'                                  " Use NERDTree shortcut to control file navigator
 Plug 'tpope/vim-surround'                                  " Surrounding word e.g., ysiw' to surround word with '.
-                                                           " In Visual mode press S{char} to surround {char} outside.
+                                                           " In Visual mode press S{char} to surround {char} outside
 Plug 'terryma/vim-multiple-cursors'                        " CTRL + N for multiple cursor
-
+Plug 'easymotion/vim-easymotion'                           " Set easymotion together with AceJump
 
 " Quickscope highlight keys settings
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
@@ -55,6 +54,8 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " Map <leader> key
 let mapleader=" "
 
+" Map stop showing highlights.
+nnoremap <ESC><ESC> :noh<CR>
 
 " +++++++++++++++++++ Map \{char} keys +++++++++++++++++++++
  
@@ -90,9 +91,6 @@ map \f <Action>(FileStructurePopup)
 
 " Map hide all side windows
 map \h <Action>(HideAllWindows)
-
-" Map stop showing highlights.
-nnoremap \n :noh<CR>
 
 
 " +++++++++++++++++++ Map <leader>{char} keys ++++++++++++++++++++
