@@ -116,7 +116,7 @@ let g:airline#extensions#tabline#enabled = 1
 " Quickscope highlight keys settings
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " Highlighted Yank Duration
-let g:highlightedyank_highlight_duration = 1000
+let g:highlightedyank_highlight_duration = 600
 
 " Color Scheme settings
 colorscheme tender
