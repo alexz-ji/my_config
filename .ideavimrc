@@ -46,7 +46,8 @@ Plug 'easymotion/vim-easymotion'                           " Set easymotion toge
 
 " Quickscope highlight keys settings
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
+" Highlighted Yank Duration
+let g:highlightedyank_highlight_duration = 500
  
 
 " ------------------------------------------ Key maps below -------------------------------------------------------
