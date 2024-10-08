@@ -21,6 +21,7 @@ call plug#begin("~/.vim/plugged")
  Plug 'preservim/tagbar'                					" Tagbar for code navigation
  Plug 'easymotion/vim-easymotion'
  Plug 'unblevable/quick-scope'
+ Plug 'machakann/vim-highlightedyank'
 
 call plug#end()
 
@@ -114,6 +115,8 @@ nnoremap <C-Del> :bd<CR>
 let g:airline#extensions#tabline#enabled = 1
 " Quickscope highlight keys settings
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+" Highlighted Yank Duration
+let g:highlightedyank_highlight_duration = 1000
 
 " Color Scheme settings
 colorscheme tender
