@@ -28,6 +28,29 @@ call plug#end()
 " Easymotion leader key map
 let mapleader=" "
 
+" Map stop showing highlights.
+nnoremap <ESC><ESC> :noh<CR>
+
+" Yank til end of line. Default is to yank whole line as yy.
+nnoremap Y y$
+
+" Put search results in the middle of the screen
+nnoremap n nzz
+nnoremap N Nzz
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" Map <Ctrl>-Up/Down to VIM key #/* to jump to previous/next whole word.
+nnoremap <C-Up> #
+nnoremap <C-Down> *
+
+" Quick window navigation in split window
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+map <C-H> <C-W>h
+
 
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
@@ -56,8 +79,7 @@ set ttyfast                 " Speed up scrolling in Vim
 set noswapfile            " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.
 
-" Font settings
-set guifont=FiraMono\ Nerd\ Font\ Regular
+
 
 
 " Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
@@ -78,7 +100,6 @@ xmap <leader>g<C-n> <Plug>AllOccurrences
 
 
 " Remap NERDTree
-" nnoremap <leader><leader>z :NERDTreeFocus<CR>
 nnoremap <leader><leader>z :NERDTreeToggle<CR>
 nnoremap <leader><leader>x :NERDTreeFind<CR>
 
@@ -91,6 +112,8 @@ nnoremap <C-Del> :bd<CR>
 
 " Plugin settings
 let g:airline#extensions#tabline#enabled = 1
+" Quickscope highlight keys settings
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 " Color Scheme settings
 colorscheme tender
