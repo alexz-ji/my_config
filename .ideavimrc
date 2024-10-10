@@ -21,6 +21,7 @@ set viminfo=100                         " remember viminfo when restarts
 set visualbell                          " when on, prevent beeping on error
 set matchpairs+=<:>                     " % also match '<'s and '>'s
 set scrolloff=6                         " Show a few lines of context around the cursor.
+set noideaglobalmode                    " Set idea global mode off.
 noh                                     " reset highlight when restarts.
               
 " place cursor where there is no actual text,
