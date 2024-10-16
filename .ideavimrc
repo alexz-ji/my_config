@@ -6,6 +6,7 @@
 " ------------------------------------- Set options below ------------------------------------------------------
  
 set quickscope                          " use plugin installed from IDEA
+set which-key                           " use which-key plugin
 
 set ignorecase                          " case insensitive
 set smartcase                           " use case sensitive when capital letters is input
@@ -21,7 +22,6 @@ set viminfo=100                         " remember viminfo when restarts
 set visualbell                          " when on, prevent beeping on error
 set matchpairs+=<:>                     " % also match '<'s and '>'s
 set scrolloff=6                         " Show a few lines of context around the cursor.
-set noideaglobalmode                    " Set idea global mode off.
 noh                                     " reset highlight when restarts.
               
 " place cursor where there is no actual text,
@@ -49,7 +49,9 @@ Plug 'easymotion/vim-easymotion'                           " Set easymotion toge
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " Highlighted Yank Duration
 let g:highlightedyank_highlight_duration = 500
- 
+
+" Which-key no time out
+set notimeout
 
 " ------------------------------------------ Key maps below -------------------------------------------------------
 
@@ -98,17 +100,26 @@ map \h <Action>(HideAllWindows)
 " +++++++++++++++++++ Map <leader>{char} keys ++++++++++++++++++++
 
 " Map NERDTree
-nnoremap <leader>z :NERDTreeFocus<CR>
+nnoremap <leader>e :NERDTreeFocus<CR>
+
+" Map Code
+map <leader>cf <Action>(ReformatCode) :write<CR>
 
 " Split window
 nmap <leader>| <Action>(SplitVertically)
 nmap <leader>_ <Action>(SplitHorizontally)
 nmap <leader>\ <Action>(MoveTabRight)
 nmap <leader>- <Action>(MoveTabDown)
-nmap <leader>o <Action>(MoveEditorToOppositeTabGroup)
-nmap <leader>O <Action>(Unsplit)
-nmap <leader>x <Action>(CloseAllEditorsButActive)
-nmap <leader>X <Action>(CloseAllEditors)
+nmap <leader>wx <Action>(MoveEditorToOppositeTabGroup)
+nmap <leader>wt <Action>(Unsplit)
+nmap <leader>wo <Action>(CloseAllEditorsButActive)
+nmap <leader>wO <Action>(CloseAllEditors)
+
+" Tab window
+nmap <leader><Tab>] <Action>(NextTab)
+nmap <leader><Tab>[ <Action>(PreviousTab)
+nmap <leader><Tab>o <Action>(CloseAllEditorsButActive)
+nmap <leader><Tab>O <Action>(CloseAllEditors)
 
 " Easymotion mappings
   " <leader>f{char}    |  <Plug>(easymotion-f)
