@@ -7,6 +7,7 @@
  
 set quickscope                          " use plugin installed from IDEA
 set which-key                           " use which-key plugin
+set peekaboo                            " use Peekaboo plugin to show register content
 
 set ignorecase                          " case insensitive
 set smartcase                           " use case sensitive when capital letters is input
@@ -26,7 +27,7 @@ noh                                     " reset highlight when restarts.
               
 " place cursor where there is no actual text,
 " 'onemore' allows the cursor to move just past the end of the line
-set virtualedit=onemore 
+set virtualedit=onemore
 
 " IDEA VIM Specific
 set clipboard^=unnamed,unnamedplus
@@ -221,7 +222,7 @@ xmap <C-p> <Plug>RemoveOccurrence
 " Example below:
 " sethandler <C-C> n-v:ide i:vim
 
-sethandler <C-A> n:vim i-x:ide
+sethandler <C-A> n-x:vim i:ide
 sethandler <C-Q> n-x:vim i:ide
 sethandler <C-P> n-x:vim i:ide
 
