@@ -9,7 +9,6 @@ set quickscope                          " use plugin installed from IDEA
 set which-key                           " use which-key plugin
 set peekaboo                            " use Peekaboo plugin to show register content
 
-set ignorecase                          " case insensitive
 set smartcase                           " use case sensitive when capital letters is input
 set hlsearch                            " highlight search
 set incsearch                           " incremental search
