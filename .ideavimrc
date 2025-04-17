@@ -64,7 +64,7 @@ nnoremap <ESC><ESC> :noh<CR>
 " +++++++++++++++++++ Map \{char} keys +++++++++++++++++++++
  
 " Map Reformat Code and save
-map \r <Action>(ReformatCode) :write<CR>
+map \r <Action>(ReformatCode)
 
 " Map toggle the breakpoint on the current line
 map \b <Action>(ToggleLineBreakpoint)
