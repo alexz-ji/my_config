@@ -103,7 +103,7 @@ map \h <Action>(HideAllWindows)
 nnoremap <leader>e :NERDTreeFocus<CR>
 
 " Map Code
-map <leader>cf <Action>(ReformatCode) :write<CR>
+map <leader>cf <Action>(ReformatCode)
 
 " Split window
 nmap <leader>| <Action>(SplitVertically)
